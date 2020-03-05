@@ -6,14 +6,14 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
-import { dogImageReducer } from './reducers/DogImg';
+import { catImageReducer } from './reducers/CatImg';
 
 
 
-const dogState = createStore(dogImageReducer, (applyMiddleware(thunk)));
+const catState = createStore(catImageReducer, (applyMiddleware(thunk)));
 
 ReactDOM.render(
-<Provider store={dogState}>
+<Provider store={catState}>
     <App />
     </Provider>, document.getElementById('root'));
 

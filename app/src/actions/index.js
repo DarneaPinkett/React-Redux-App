@@ -1,18 +1,18 @@
 import axios from 'axios'
 
-export const FETCHING_DOGIMG_START = "FETCHING_DOGIMG_START";
-export const FETCHING_DOGIMG_SUCCESS = "FETCHING_DOGIMG_SUCCESS";
-export const FETCHING_DOGIMG_FAILURE = "FETCHING_DOGIMG_FAILURE";
+export const FETCHING_CATIMG_START = "FETCHING_CATIMG_START";
+export const FETCHING_CATIMG_SUCCESS = "FETCHING_CATIMG_SUCCESS";
+export const FETCHING_CATIMG_FAILURE = "FETCHING_CATIMG_FAILURE";
 
-export const getDogImage = () => dispatch => {
-    dispatch({type: FETCHING_DOGIMG_START});
+export const getCatImage = () => dispatch => {
+    dispatch({type: FETCHING_CATIMG_START});
     axios
-    .get(`https://random.dog/00564ba3-e5cb-4b2b-8d97-c65a9ef26c23.png`)
+    .get(`https://random.cat/meow`)
     .then(resp => {
-        dispatch({type: FETCHING_DOGIMG_SUCCESS, payload: resp.data.file})
+        dispatch({type: FETCHING_CATIMG_SUCCESS, payload: resp.data.file})
     })
     .catch(err => {
-        dispatch({type: FETCHING_DOGIMG_FAILURE, payload: err})
+        dispatch({type: FETCHING_CATIMG_FAILURE, payload: err})
     });
 };
 

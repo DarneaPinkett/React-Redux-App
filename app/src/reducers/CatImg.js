@@ -1,18 +1,18 @@
-import { FETCHING_DOGIMG_START, FETCHING_DOGIMG_SUCCESS, FETCHING_DOGIMG_FAILURE} from "../actions/index";
+import { FETCHING_CATIMG_START, FETCHING_CATIMG_SUCCESS, FETCHING_CATIMG_FAILURE} from "../actions/index";
 
 const initialState = {
-    dogImage: null,
+    catImage: null,
     isFetching: false,
     error: ""
 };
 
-export const dogImageReducer = (state = initialState, action) => {
+export const catImageReducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCHING_DOGIMG_START:
+        case FETCHING_CATIMG_START:
             return {...state, isFetching: true, error: ""};
-        case FETCHING_DOGIMG_SUCCESS:
+        case FETCHING_CATIMG_SUCCESS:
             return {...state, isFetching: false, dogImage:action.payload};
-        case FETCHING_DOGIMG_FAILURE:
+        case FETCHING_CATIMG_FAILURE:
             return {...state, isFetching: false, dogImage: action.payload};
         default:
             return state;

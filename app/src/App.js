@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import DogImg from './components/DogImg';
+import DogImg from './components/CatImg';
 
 function App() {
   return (
