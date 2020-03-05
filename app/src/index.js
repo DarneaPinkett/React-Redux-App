@@ -6,10 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
+import { dogImageReducer } from './reducers/DogImg';
 
 
 
-const dogState = createStore(reducer, (applyMiddleware(thunk)));
+const dogState = createStore(dogImageReducer, (applyMiddleware(thunk)));
 
 ReactDOM.render(
 <Provider store={dogState}>
