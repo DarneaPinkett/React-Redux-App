@@ -7,7 +7,7 @@ export const FETCHING_CATIMG_FAILURE = "FETCHING_CATIMG_FAILURE";
 export const getCatImage = () => dispatch => {
     dispatch({type: FETCHING_CATIMG_START});
     axios
-    .get(`https://random.cat/meow`)
+    .get(`http://aws.random.cat/meow`)
     .then(resp => {
         dispatch({type: FETCHING_CATIMG_SUCCESS, payload: resp.data.file})
     })

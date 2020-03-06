@@ -3,29 +3,31 @@ import {connect} from 'react-redux';
 import {getCatImage} from '../actions/index';
 
 
-const CatImage = props => {
+const CatImg = props => {
+    
     useEffect(() => {
+        console.log(props);
         props.getCatImage();},
-        [props.getCatImage]);
+        []);
 
         if (props.isFetching) {
             return <h2>Fetched A Cat!</h2>
         }
         return (
             <div>
-                <h1>Get a Dog!</h1>
+                <h1>Get a Cat!</h1>
                 <img src={props.catImage} alt="catplace" />
-                <button onClick={props.getDogImage}>See A New Cat</button>
+                <button onClick={props.getCatImage}>See A New Cat</button>
             </div>
         )
 }
 
 const mapStateToProps = state => {
     return {
-        catImage: state.image.catImage,
+        catImage: state.catImage,
         isFetching: state.isFetching,
         error: state.error,
     }
 }
 
-export default connect (mapStateToProps, {getCatImage})(CatImage);
+export default connect (mapStateToProps, {getCatImage})(CatImg);

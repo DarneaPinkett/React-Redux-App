@@ -11,9 +11,10 @@ export const catImageReducer = (state = initialState, action) => {
         case FETCHING_CATIMG_START:
             return {...state, isFetching: true, error: ""};
         case FETCHING_CATIMG_SUCCESS:
-            return {...state, isFetching: false, dogImage:action.payload};
+            console.log(action.payload)
+            return {...state, isFetching: false, catImage: action.payload};
         case FETCHING_CATIMG_FAILURE:
-            return {...state, isFetching: false, dogImage: action.payload};
+            return {...state, isFetching: false, catImage: action.payload};
         default:
             return state;
     }
